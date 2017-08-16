@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+
+PROJECT(VideoDenoiser)
+
+find_package(OpenCV REQUIRED) 
+
+SET(SRC_LIST main.cpp)
+SET(CMAKE_BUILD_TYPE Release)		#Change Release to Debug to switch the mode.
+
+
+SET(PROJECT_INCLUDE ${PROJECT_SOURCE_DIR}/source)
+INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS} ${PROJECT_INCLUDE})
+
+add_subdirectory(source)
+
+ADD_EXECUTABLE(VideoDenoiser ${SRC_LIST})
+TARGET_LINK_LIBRARIES(VideoDenoiser ${OpenCV_LIBS} SRC_MODULE_static)
