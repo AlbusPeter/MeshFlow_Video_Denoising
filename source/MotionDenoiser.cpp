@@ -55,18 +55,15 @@ MotionDenoiser::MotionDenoiser(char* name){
 void MotionDenoiser::MotionEstimation(){
 	
 	MeshFlow meshflow(m_width,m_height);
-	gridTracker gt;
-	gt.trackerInit(m_frames[0]);
+	vector<cv::Point2f> sourceFeatures, targetFeatures;
 
 	for (int i = 1; i < m_frameNum; i++){
 		meshflow.ReInitialize();
+		sourceFeatures.clear();
+		targetFeatures.clear();
 		
-		gt.Update(m_frames[i - 1], m_frames[i]);
-		meshflow.SetFeature(gt.preFeas, gt.trackedFeas);
-		
-		/*std::vector<cv::Point2f> features1, features2;
-		mySURF(m_frames[i - 1], m_frames[i], features1, features2);
-		meshflow.SetFeature(features1,features2);*/
+		myKLT(m_frames[i - 1], m_frames[i], sourceFeatures, targetFeatures);
+		meshflow.SetFeature(sourceFeatures, targetFeatures);
 
 		meshflow.Execute();
 		meshflow.GetMotions(map_X[i-1], map_Y[i-1]);

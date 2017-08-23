@@ -1,24 +1,10 @@
 ﻿#include <opencv2/opencv.hpp>
 #include "MeshFlow.h"
-#include "gridTracker.h"
 #include "MotionDenoiser.h"
-#include "DirectWarpDenoiser.h"
 #include <time.h>
 
 
 void main(){
-
-
-	//MotionDenoiser denoiser("C:\\Users\\shuaicheng\\Desktop\\ICIP2017\\VideoDenoise\\ref\\burstdata\\data\\Square\\0.avi");
-	//denoiser.Execute();
-	//denoiser.SaveResult("C:\\Users\\shuaicheng\\Desktop\\ICIP2017\\VideoDenoise\\ref\\burstdata\\data\\Square\\0_.avi");
-
-
-	//DirectWarpDenoiser denoiser("C:\\Users\\shuaicheng\\Desktop\\ICIP2017\\VideoDenoise\\ref\\burstdata\\data\\Toy\\0.avi");
-	//denoiser.Execute();
-	//denoiser.SaveResult("C:\\Users\\shuaicheng\\Desktop\\ICIP2017\\VideoDenoise\\ref\\burstdata\\results\\Toy\\our.png");
-
-
    vector<char*> names;
    vector<char*> outNames;
    
