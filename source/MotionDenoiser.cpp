@@ -176,7 +176,7 @@ void MotionDenoiser::TargetFrameBuild(int reference, cv::Mat &dst){
 void MotionDenoiser::SaveResult(char* name){
 	
 	cv::VideoWriter outVideoWriter;
-	outVideoWriter.open(name, CV_FOURCC('x', 'v', 'i', 'd'), m_fps,m_size);
+	outVideoWriter.open(name, CV_FOURCC('X', 'V', 'I', 'D'), m_fps,m_size);
 	
 	for (int i = 0; i < m_frameNum; i++){
 		outVideoWriter << dst[i];
