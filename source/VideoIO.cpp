@@ -37,7 +37,7 @@ void WriteFrames(vector<cv::Mat> Frames){
 	cv::VideoWriter vw;
 	int fps = 15;
 	cv::Size S = Frames[0].size();
-	vw.open("Results\\output.avi", CV_FOURCC('x', 'v', 'i', 'd'), fps, S);
+	vw.open("Results\\output.avi", CV_FOURCC('X', 'V', 'I', 'D'), fps, S);
 
 	for (int i = 0; i < Frames.size(); i++){
 		Frames[i].convertTo(Frames[i], CV_8UC3);
