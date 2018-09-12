@@ -97,11 +97,11 @@ void MeshFlow::SpatialMedianFilter(){
 			
 			vector<float> motionx;
 			vector<float> motiony;
-			for(int k=-radius;k<=radius;k++){
-				for(int l=-radius;l<=radius;l++){
+			for(int k=i-radius;k<=i+radius;k++){
+				for(int l=j-radius;l<=j+radius;l++){
 					if(k>=0 && k<m_meshheight && l>=0 && l<m_meshwidth){
-						motionx.push_back(tempVertexMotion[i*m_meshwidth+j].x);
-						motiony.push_back(tempVertexMotion[i*m_meshwidth+j].y);
+						motionx.push_back(tempVertexMotion[k*m_meshwidth+l].x);
+						motiony.push_back(tempVertexMotion[k*m_meshwidth+l].y);
 					}			   
 				}
 			}
