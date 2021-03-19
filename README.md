@@ -1,6 +1,8 @@
 # MeshFlow_Video_Denoising
 Source Code for MeshFlow Video Denoising <br> <br>
 
+![showcase](https://github.com/AlbusPeter/AlbusPeter.github.io/blob/master/projects/Meshflow-video-denoising/denoise.gif)
+
 OpenCV Version:2.4.11<br><br>
 
 This source code may not have the same processing speed as the paper illustrated. Because I replace the original matching algorithm into a simple one. This may also influence the quality of the denoising result a little. For more project detail, including the academic paper, project abstract and test data, please visiting the project page at http://www.liushuaicheng.org/ICIP/2017/index.html. <br><br>
